@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
-        System.out.println("Добро пожаловть! Вы запустили калькулятор!");
+        System.out.println("Добро пожаловать! Вы запустили калькулятор!");
         Scanner scan = new Scanner(System.in);
         int operand1;
         int operand2;
@@ -29,7 +29,7 @@ public class Calculator {
                 break;
             case '/':
                 if(operand2 == 0) {
-                    System.out.println("Ошибка! Введено деление на 0 запрещено!");
+                    System.out.println("Ошибка! Деление на 0 запрещено!");
                 }
                 else {
                     System.out.println("Результат: " + operand1 / operand2);
