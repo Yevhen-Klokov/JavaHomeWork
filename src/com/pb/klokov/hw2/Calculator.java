@@ -9,15 +9,17 @@ public class Calculator {
         Scanner scan = new Scanner(System.in);
         int operand1;
         int operand2;
-        String symbol;
+        String sign;
         System.out.println("Введи первое значение:");
         operand1 = scan.nextInt();
         System.out.println("Введи второе значение:");
         operand2 = scan.nextInt();
         System.out.println("Введи знак арифметической операции:");
-        symbol = scan.next();
-        char sym = symbol.charAt(0);
-        switch (sym) {
+        sign = scan.next();
+        //преобразовуем строчное значение в символьное
+        char sign2 = sign.charAt(0);
+        //проверяем введённую оперецию и выполняем действие
+        switch (sign2) {
             case '+':
                 System.out.println("Результат: " + (operand1 + operand2));
                 break;
