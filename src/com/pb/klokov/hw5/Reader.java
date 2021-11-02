@@ -59,6 +59,14 @@ public class Reader {
         System.out.println(FIO + "взял книги:" + str);
         }
 
+    //метод, который будет принимать переменное количество объектов класса Book
+    public void takeBook(char ... k) {
+        for(int i = 0; i < k.length; i++) {
+            System.out.println(k[i]);
+        }
+    }
+
+
     //метод, который будет принимать количество взятых книг
     public void returnBook(int count) {
         System.out.println(FIO + "вернул " + count + " книги.");
@@ -71,6 +79,12 @@ public class Reader {
             str += s + ", ";
         }
         System.out.println(FIO + "вернул книги:" + str);
+    }
+    //метод, который будет принимать переменное количество объектов класса Book
+    public void returnBook(char ... k) {
+        for(int i = 0; i < k.length; i++) {
+            System.out.println(k[i]);
+        }
     }
     }
 

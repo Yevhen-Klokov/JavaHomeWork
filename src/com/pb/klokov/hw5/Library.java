@@ -6,7 +6,6 @@ public class Library {
         //библиотека
         Book[] booksNew = {
                 new Book("Приключения Шерлока Холмса","Артур Конан Дойл",1890),
-                new Book("Приключения Шерлока Холмса","Артур Конан Дойл",1890),
                 new Book("Джейн Эйр","Артур Конан Дойл",1890),
                 new Book("Путешествия Гулливера","Джонатан Свифт",1726)
         };
@@ -32,7 +31,20 @@ public class Library {
 
         System.out.println("\nВторой вывод takeBook");
         readersNew[0].takeBook(booksNew[0].getTitle(),booksNew[1].getTitle());
+
+        System.out.println("\nТретий вывод takeBook");
+        readersNew[0].takeBook(booksNew[0].bookInfo(),booksNew[1].bookInfo(),booksNew[2].bookInfo());
+
+        System.out.println("\nПервый вывод returnBook");
+        readersNew[0].returnBook(3);
+
+        System.out.println("\nВторой вывод returnBook");
         readersNew[0].returnBook(booksNew[0].getTitle(),booksNew[1].getTitle());
+
+        System.out.println("\nТретий вывод returnBook");
+        readersNew[0].returnBook(booksNew[0].bookInfo(),booksNew[1].bookInfo(),booksNew[2].bookInfo());
+
+
 
 
     }
