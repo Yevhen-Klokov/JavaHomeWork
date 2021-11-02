@@ -31,7 +31,9 @@ public class Library {
         readersNew[0].takeBook(3);
 
         System.out.println("\nВторой вывод takeBook");
-        readersNew[0].takeBook(booksNew[0].getTitle());
+        readersNew[0].takeBook(booksNew[0].getTitle(),booksNew[1].getTitle());
+        readersNew[0].returnBook(booksNew[0].getTitle(),booksNew[1].getTitle());
 
-        }
+
+    }
     }

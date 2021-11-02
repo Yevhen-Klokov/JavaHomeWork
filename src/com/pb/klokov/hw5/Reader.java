@@ -52,9 +52,30 @@ public class Reader {
 
     //метод, который будет принимать переменное количество названий книг
     public void takeBook(String... title) {
-        System.out.println(FIO + "взял книги:" + title);
+        String str = "";
+        for (String s : title){
+            str += s + ", ";
         }
+        System.out.println(FIO + "взял книги:" + str);
+        }
+
+    //метод, который будет принимать количество взятых книг
+    public void returnBook(int count) {
+        System.out.println(FIO + "вернул " + count + " книги.");
     }
+
+    //метод, который будет принимать переменное количество названий книг
+    public void returnBook(String... title) {
+        String str = "";
+        for (String s : title){
+            str += s + ", ";
+        }
+        System.out.println(FIO + "вернул книги:" + str);
+    }
+    }
+
+
+
 
 
 
