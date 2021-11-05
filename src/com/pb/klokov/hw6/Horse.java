@@ -6,10 +6,15 @@ public class Horse extends Animal{
     String kind; //Дикая или Одомашненная, Одичалая
     String status; //Элитные или простые
 
+    public Horse(String animal, String food, String location, String kind, String status) {
+        super(animal, food, location);
+        this.kind = "одомашненная";
+        this.status = "элитная";
+    }
+
     @Override
     public void makeNoise(Animal animal) {
-        System.out.println("Лошадь " + animal + "подал голос");
-        super.makeNoise(animal);
+        System.out.println("Лошадь " + animal + "подала голос");
     }
 
     @Override

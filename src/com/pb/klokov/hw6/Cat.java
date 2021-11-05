@@ -6,10 +6,15 @@ public class Cat extends Animal{
     String category; //короткошёрстные или длинношёрстные
     String ear_type; //веслоухие или не веслоухие
 
+    public Cat(String animal, String food, String location, String category, String ear_type) {
+        super(animal, food, location);
+        this.category = "короткошёрстный";
+        this.ear_type = "веслоухий";
+    }
+
     @Override
     public void makeNoise(Animal animal) {
         System.out.println("Кот " + animal + "подал голос");
-        super.makeNoise(animal);
     }
 
     @Override
