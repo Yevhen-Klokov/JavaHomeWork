@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Dog extends Animal{
     String breed = "сторожевой"; //порода (сторожевая, бойцовская ...)
     String breedName = "алабай"; //название породы
-    public Dog() {super("Барбос", "мясо", "вдор");}
+    public Dog() {super("пёс Барбос", "мясо", "во дворe.");}
 
     public String getBreed() {
         return breed;

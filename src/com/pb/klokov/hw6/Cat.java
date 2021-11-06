@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Cat extends Animal{
     String category = "короткошёрстный";
     String ear_type = "веслоухий";
-    public Cat() {super("Муркот", "мышки", "дом");}
+    public Cat() {super("кот Муркот", "мышки", "в домe");}
 
     @Override
     public void makeNoise() {
