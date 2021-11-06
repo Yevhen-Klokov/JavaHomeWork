@@ -2,17 +2,20 @@ package com.pb.klokov.hw6;
 
 public class VetСlinic {
     public static void main(String[] args) {
-    Animal[] animals = {
-            new Animal("Cat", "мышей", "в домe "),
-            new Animal("пёс Барбос", "мясо", "во дворе "),
-            new Animal("лошадь Буран", "сено", "в загоне ")
-    };
+    Animal dog = new Dog();
+    Animal cat = new Cat();
+    Animal horse = new Horse();
+    Animal [] animals = {dog, cat, horse};
 
-        System.out.println("Все животные");
+//        System.out.println("Все животные");
+//        for (int i = 0; i < animals.length; i++) {
+//            System.out.print(animals[i]);
+//        }
+    Veterinarian vet = new Veterinarian();
+        System.out.println("Отправляем животных к ветеренару:");
         for (int i = 0; i < animals.length; i++) {
-            System.out.print(animals[i]);
+            vet.treatAnimal(animals[i]);
         }
-
     }
 
 }

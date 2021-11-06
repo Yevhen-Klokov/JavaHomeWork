@@ -15,36 +15,23 @@ public class Animal {
         return animal;
     }
 
-    public void setAnimal(String animal) {
-        this.animal = animal;
-    }
-
     public String getFood() {
         return food;
-    }
-
-    public void setFood(String food) {
-        this.food = food;
     }
 
     public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public void makeNoise(Animal animal){
-
+    public void makeNoise(){
         System.out.println(animal + " подаёт голос");
     }
 
-    public void eat(Animal animal){
+    public void eat(){
         System.out.println(animal + " ест");
     }
 
-    public void sleep(Animal animal){
+    public void sleep(){
         System.out.println(animal + " спит");
     }
 

@@ -3,30 +3,25 @@ package com.pb.klokov.hw6;
 import java.util.Objects;
 
 public class Cat extends Animal{
-    String category; //короткошёрстные или длинношёрстные
-    String ear_type; //веслоухие или не веслоухие
+    String category = "короткошёрстный";
+    String ear_type = "веслоухий";
+    public Cat() {super("Муркот", "мышки", "дом");}
 
-    public Cat(String animal, String food, String location, String category, String ear_type) {
-        super(animal, food, location);
-        this.category = "короткошёрстный";
-        this.ear_type = "веслоухий";
+    @Override
+    public void makeNoise() {
+        System.out.println("Кот " + animal + " мурчит");
     }
 
     @Override
-    public void makeNoise(Animal animal) {
-        System.out.println("Кот " + animal + "подал голос");
-    }
-
-    @Override
-    public void eat(Animal animal) {
-        System.out.println("Кот " + animal + "ест");
+    public void eat() {
+        System.out.println("Кот " + animal + " ест");
     }
 
     @Override
     public String toString() {
-        return "Cat{" +
-                "category='" + category + '\'' +
-                ", ear_type='" + ear_type + '\'' +
+        return "Кот{" +
+                "категория='" + category + '\'' +
+                ", вид ушей='" + ear_type + '\'' +
                 '}';
     }
 

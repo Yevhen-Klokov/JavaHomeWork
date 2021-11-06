@@ -3,14 +3,9 @@ package com.pb.klokov.hw6;
 import java.util.Objects;
 
 public class Dog extends Animal{
-    String breed; //порода (сторожевая, бойцовская ...)
-    String breedName; //название породы
-
-    public Dog(String animal, String food, String location, String breed, String breedName) {
-        super(animal, food, location);
-        this.breed = "сторожевая";
-        this.breedName = "алабай";
-    }
+    String breed = "сторожевой"; //порода (сторожевая, бойцовская ...)
+    String breedName = "алабай"; //название породы
+    public Dog() {super("Барбос", "мясо", "вдор");}
 
     public String getBreed() {
         return breed;
@@ -21,22 +16,21 @@ public class Dog extends Animal{
     }
 
     @Override
-    public void makeNoise(Animal animal) {
-
-        System.out.println("Пёс " + animal + "подал голос");
+    public void makeNoise() {
+        System.out.println("Пёс " + animal + " лает");
     }
 
     @Override
-    public void eat(Animal animal) {
+    public void eat() {
 
-        System.out.println("Пёс " + animal + "ест");
+        System.out.println("Пёс " + animal + " ест");
     }
 
     @Override
     public String toString() {
-        return "Dog{" +
-                "breed='" + breed + '\'' +
-                ", breedName='" + breedName + '\'' +
+        return "Пёс {" +
+                "тип породы='" + breed + '\'' +
+                ", название породы='" + breedName + '\'' +
                 '}';
     }
 
