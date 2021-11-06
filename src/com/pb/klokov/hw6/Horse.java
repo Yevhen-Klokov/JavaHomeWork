@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Horse extends Animal{
     String kind = "одомашненная"; //Дикая или Одомашненная, Одичалая
     String status = "элитная"; //Элитные или простые
-    public Horse() {super("конь Буран", "сено", "в конюшне");}
+    public Horse() {super("конь Буран", "сено", "в конюшне.");}
 
     @Override
     public void makeNoise() {
