@@ -44,8 +44,5 @@ public class Library {
         System.out.println("\nТретий вывод returnBook");
         readersNew[0].returnBook(booksNew[0].bookInfo(),booksNew[1].bookInfo(),booksNew[2].bookInfo());
 
-
-
-
     }
     }
