@@ -22,6 +22,7 @@ public enum Size {
         this.description = description;
         this.euroSize = euroSize;
     }
+
 }
 
 
