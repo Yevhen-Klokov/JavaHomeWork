@@ -1,7 +1,5 @@
 package com.pb.klokov.hw7;
 
-import java.lang.reflect.Constructor;
-
 public class Atelier {
     public static void main(String[] args) throws Exception {
         Clothes tshirt = new Tshirt(Size.L, 1000, "green");
@@ -11,8 +9,36 @@ public class Atelier {
 
         Clothes[] clothes = {tshirt,pants,skirt,tie};
 
-        ((Tshirt) tshirt).dressMan();
-        ((Pants) pants).dressMan();
+//        ((Tshirt) tshirt).dressMan();
+//        ((Pants) pants).dressMan();
+        System.out.println("Мужская одежда:");
+        for(Clothes clothes1 : clothes){
+            if(clothes1 instanceof Tshirt){
+                ((Tshirt) tshirt).dressMan();
+            }
+            else if(clothes1 instanceof Pants){
+                ((Pants) pants).dressMan();
+            }
+            else if(clothes1 instanceof Tie){
+                ((Tie) tie).dressMan();
+            }
+
+        }
+        System.out.println("");
+
+        System.out.println("Женская одежда:");
+        for(Clothes clothes1 : clothes){
+            if(clothes1 instanceof Tshirt){
+                ((Tshirt) tshirt).dressWomen();
+            }
+            else if(clothes1 instanceof Pants){
+                ((Pants) pants).dressWomen();
+            }
+            else if(clothes1 instanceof Skirt){
+                ((Skirt) skirt).dressWomen();
+            }
+
+        }
 
     }
 
