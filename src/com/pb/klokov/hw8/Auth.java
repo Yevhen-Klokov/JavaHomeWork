@@ -6,25 +6,33 @@ import java.util.regex.Pattern;
 public class Auth {
     private String login;
     private String password;
+    private String confirmPassword;
 
-    public Auth(String login, String password) {
+    public Auth(String login, String password, String confirmPassword) {
         this.login = login;
         this.password = password;
+        this.confirmPassword = confirmPassword;
     }
 
-    //метод проверки логина и пароля на соответствие
-    public static boolean confirmPassword(String conf){
-        Pattern pattern = Pattern.compile("\\w{5,20}");
-        Matcher matcher = pattern.matcher(conf);
-        return matcher.matches();
+    public void signUp(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
+
+        if(Pattern.matches("[a-zA-Z0-9]{5,20}", login)){
+            this.login = login;
+        } else {
+            throw new WrongLoginException();
+        }
+        if((Pattern.matches("[a-zA-Z0-9]{5,}", password)) && (password.equals(confirmPassword))){
+            this.password = password;
+            this.confirmPassword = confirmPassword;
+        } else {
+            throw new WrongPasswordException();
+        }
+
     }
 
-    public void signUp(String login, String password) {
-        boolean logConf = confirmPassword(login);
-        boolean pasConf = confirmPassword(password);
-        System.out.println("Валидация логина: " + logConf);
-        System.out.println("Валидация пароля: " + pasConf);
+    public void signIn(String login,String password) throws WrongLoginException {
+        if(login != this.login || password != this.password){
+            throw new WrongLoginException();
+        }
     }
 }
-//        login = this.login;
-//            System.out.println(this.login);
