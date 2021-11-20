@@ -7,7 +7,6 @@ public class Auth {
     private String password;
     private String confirmPassword;
 
-
     public void signUp(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
 
         if(Pattern.matches("[a-zA-Z0-9]{5,20}", login)){
