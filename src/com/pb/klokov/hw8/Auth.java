@@ -1,6 +1,5 @@
 package com.pb.klokov.hw8;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Auth {
