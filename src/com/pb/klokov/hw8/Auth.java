@@ -7,11 +7,6 @@ public class Auth {
     private String password;
     private String confirmPassword;
 
-    public Auth(String login, String password, String confirmPassword) {
-        this.login = login;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-    }
 
     public void signUp(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
 

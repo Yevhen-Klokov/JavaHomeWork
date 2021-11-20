@@ -60,9 +60,9 @@ public class Reader {
         }
 
     //метод, который будет принимать переменное количество объектов класса Book
-    public void takeBook(Book... books) {
-        for(int i = 0; i < books.length; i++) {
-            System.out.println(books[i]);
+    public void takeBook(char ... k) {
+        for(int i = 0; i < k.length; i++) {
+            System.out.println(k[i]);
         }
     }
 
@@ -81,9 +81,9 @@ public class Reader {
         System.out.println(FIO + "вернул книги:" + str);
     }
     //метод, который будет принимать переменное количество объектов класса Book
-    public void returnBook(Book... books){
-            for(int i = 0; i < books.length; i++) {
-                System.out.println(books[i]);
+    public void returnBook(char ... k) {
+            for(int i = 0; i < k.length; i++) {
+                System.out.println(k[i]);
         }
     }
     }
