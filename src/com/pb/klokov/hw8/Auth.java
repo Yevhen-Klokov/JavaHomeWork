@@ -27,12 +27,14 @@ public class Auth {
         } else {
             throw new WrongPasswordException();
         }
-
+        System.out.println("Поздравляем! Регистрация прошла успешно!");
     }
 
-    public void signIn(String login,String password) throws WrongLoginException {
-        if(login != this.login || password != this.password){
+    public void signIn(String loginIn, String passwordIn) throws WrongLoginException {
+        if( (!loginIn.equals(login)) || (!passwordIn.equals(password))){
             throw new WrongLoginException();
+        } else {
+            System.out.println("Вход выполнено успешно!");
         }
     }
 }

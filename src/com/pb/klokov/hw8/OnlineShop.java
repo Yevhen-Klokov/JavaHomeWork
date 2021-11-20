@@ -20,14 +20,11 @@ public class OnlineShop {
             auth.signUp(setLogin,setPassword,setPassword);
         } catch (WrongLoginException e) {
             System.out.println("Ввведено некорректный логин! Длинна должна быть от 5 до 20 символов и содержать только латинские буквы и цифры.");
-        } catch (WrongPasswordException e) {
+        } catch (WrongPasswordException c) {
             System.out.println("Ввведено некорректный пароль! Длинна более 5 символов, только латинские буквы, цифры и знак подчеркивания. Также пароль и подтверждение пароля должны совпадать.");
         }
-        finally {
-            System.out.println("Поздравляем! Регистрация прошла успешно!");
-        }
 
-        System.out.println("Выполните вход в личный кабинет OnlineShop! \n Введите имя: ");
+        System.out.print("Выполните вход в личный кабинет OnlineShop! \n Введите имя: ");
         Scanner scan4 = new Scanner(System.in);
         String loginIn = scan4.next();
         System.out.print("Введите пароль: ");
