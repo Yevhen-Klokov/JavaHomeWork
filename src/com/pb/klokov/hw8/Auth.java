@@ -21,7 +21,7 @@ public class Auth {
         } else {
             throw new WrongLoginException();
         }
-        if((Pattern.matches("[a-zA-Z0-9]{5,}", password)) && (password.equals(confirmPassword))){
+        if((Pattern.matches("[a-zA-Z0-9+_]{5,}", password)) && (password.equals(confirmPassword))){
             this.password = password;
             this.confirmPassword = confirmPassword;
         } else {
