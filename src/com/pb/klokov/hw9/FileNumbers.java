@@ -33,7 +33,6 @@ public class FileNumbers {
             System.out.println("Ошибка " + e.getStackTrace());
         }
     }
-
     public static void main(String[] args) throws IOException {
         createNumbersFile();
         System.out.println("Был ли файл успешно создан?");
