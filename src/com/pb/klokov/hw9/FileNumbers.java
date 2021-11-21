@@ -1,9 +1,9 @@
 package com.pb.klokov.hw9;
 
-import java.nio.charset.StandardCharsets;
 import java.io.IOException;
 import java.io.Writer;
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -42,14 +42,12 @@ public class FileNumbers {
 
     public static void createOddNumbersFile() throws IOException {
         Path path = Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt");
-
-        // чтение всех строк файла
+// чтение всех строк файла
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
 
         for (String s: lines) {
             System.out.println(s);
         }
-
     }
 
     public static void main(String[] args) throws IOException {
