@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Random;
 
 public class FileNumbers {
@@ -21,7 +22,7 @@ public class FileNumbers {
             array[i] = random.nextInt(100);
         }
 
-        String data = array.toString();
+        String data = Arrays.toString(array);
         System.out.println(data);
         // Creates a Writer using FileWriter
         try (Writer writer = new FileWriter("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt")) {
