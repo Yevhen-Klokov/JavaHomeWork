@@ -79,13 +79,32 @@ public class FileNumbers {
     }
 
     public static void main(String[] args) throws IOException {
+        //Вызов методов
         createNumbersFile();
         createOddNumbersFile();
-//        System.out.println("Был ли файл успешно создан?");
-//        System.out.println(Files.exists(Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt")));
-//        System.out.println(Files.size(Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt")));
 
+        //Демонстрация работы
+        Path path = Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt");
+        Path path2 = Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\odd-numbers.txt");
+
+        // чтение всех строк файла numbers
+        List<String> lines = Files.readAllLines(path);
+        System.out.println("Числа из файла numbers:");
+        for (String s : lines) {
+            System.out.println(s);
+        }
+        System.out.println(" ");
+        System.out.println("Числа из файла odd-numbers:");
+
+        // чтение всех строк файла odd-numbers
+        List<String> lines2 = Files.readAllLines(path2);
+
+        for (String s : lines2) {
+            System.out.println(s);
+        }
     }
 }
+
+
 
 
