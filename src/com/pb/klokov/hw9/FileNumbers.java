@@ -1,14 +1,13 @@
 package com.pb.klokov.hw9;
 
-import java.io.IOException;
-import java.io.Writer;
-import java.io.FileWriter;
-import java.nio.charset.StandardCharsets;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 
 public class FileNumbers {
     public static void createNumbersFile() throws IOException {
@@ -19,7 +18,7 @@ public class FileNumbers {
         //создаём массив и заполняем
         int[][] array = new int[10][10];
         Random random = new Random();
-        for(int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 array[i][j] = random.nextInt(99);
             }
@@ -38,15 +37,44 @@ public class FileNumbers {
         } catch (Exception e) {
             System.out.println("Ошибка " + e.getStackTrace());
         }
+
     }
 
     public static void createOddNumbersFile() throws IOException {
-        Path path = Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt");
-// чтение всех строк файла
-        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        BufferedReader br = new BufferedReader(new FileReader("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt"));
+        List<String> lines = new ArrayList<>();
+        while (br.ready()) {
+            lines.add(br.readLine());
+        }
 
-        for (String s: lines) {
-            System.out.println(s);
+        Integer[][] array = new Integer[10][10];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                String[] line = lines.get(i).split(" ");
+                array[i][j] = Integer.parseInt(line[j]);
+            }
+        }
+        //замена нечётных на 0
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i][j] % 2 != 0) {
+                    array[i][j] = 0;
+                }
+            }
+        }
+        //пишем массив
+        try (Writer writer = new FileWriter("C:\\JavaHomeWorks\\JavaHomeWork\\odd-numbers.txt")) {
+            // Пишем в файл
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array.length; j++) {
+                    writer.write(String.valueOf(array[i][j]));
+                    writer.write(" ");
+                }
+                writer.write("\r\n");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Ошибка " + e.getStackTrace());
         }
     }
 
@@ -56,7 +84,8 @@ public class FileNumbers {
 //        System.out.println("Был ли файл успешно создан?");
 //        System.out.println(Files.exists(Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt")));
 //        System.out.println(Files.size(Paths.get("C:\\JavaHomeWorks\\JavaHomeWork\\numbers.txt")));
+
     }
-    }
+}
 
 
