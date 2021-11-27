@@ -1,7 +1,6 @@
 package com.pb.klokov.hw10;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class NumBox<T extends Number> {
 
@@ -21,7 +20,7 @@ public class NumBox<T extends Number> {
         try {
             this.numbers[index] = number;
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Массив переполнен!");
+            System.out.println("Ошибка! Массив переполнен!");
         }
     }
 
@@ -34,25 +33,32 @@ public class NumBox<T extends Number> {
     }
 
     public double sum (){
-        double sum = 0;
-        for (T t : numbers){
-            sum += t.number;
+        double sum = 0.0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i].doubleValue();
         }
         return sum;
     }
 
     public double average (){
-        double sum = 0;
-        for (T t : numbers){
-            sum += t.number;
+        double sum = 0.0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i].doubleValue();
         }
         return sum / numbers.length;
     }
-    public T max (){
-        Arrays.stream(numbers).sorted();
-        return numbers[0];
-        }
+    public T max() {
+        Arrays.sort(numbers);
+        return numbers[numbers.length-1];
     }
+
+    @Override
+    public String toString() {
+        return "NumBox{" +
+                "numbers=" + Arrays.toString(numbers) +
+                '}';
+    }
+}
 
 
 
