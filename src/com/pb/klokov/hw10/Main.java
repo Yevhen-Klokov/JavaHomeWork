@@ -1,9 +1,5 @@
 package com.pb.klokov.hw10;
 
-import com.pb.klokov.hw3.Array;
-
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args)  {
         NumBox<Number> nums = new NumBox<>(5);
@@ -15,10 +11,11 @@ public class Main {
 
         //Попитка добавить элемент
         nums.add(5, new Number(6));
+
         System.out.println("Число массива по индекусу 0: " + nums.get(0).getNumber());
         System.out.println("К-во элементов массива: " + nums.length());
         System.out.println("Среднее значение элементов массива: " + nums.average());
         System.out.println("Сумма элеменов массива: " + nums.sum());
-        System.out.println("Максимальний элемент массива undefined" );
+        System.out.println("Максимальний элемент массива: " + nums.max());
     }
 }

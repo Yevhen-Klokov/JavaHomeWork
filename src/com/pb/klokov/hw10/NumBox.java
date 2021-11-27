@@ -1,6 +1,7 @@
 package com.pb.klokov.hw10;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class NumBox<T extends Number> {
 
@@ -19,8 +20,8 @@ public class NumBox<T extends Number> {
     public void add(int index, T number) {
         try {
             this.numbers[index] = number;
-        } catch (Exception e) {
-            System.out.println("Не возможно добавить элемент т.к. массив переполнен!");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Массив переполнен!");
         }
     }
 
@@ -47,7 +48,10 @@ public class NumBox<T extends Number> {
         }
         return sum / numbers.length;
     }
-
+    public T max (){
+        Arrays.stream(numbers).sorted();
+        return numbers[0];
+        }
     }
 
 
